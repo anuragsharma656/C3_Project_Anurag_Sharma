@@ -6,6 +6,7 @@ import org.mockito.Mockito;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -68,12 +69,21 @@ class RestaurantTest {
 
     @Test
     public void get_order_total_value_for_given_list_of_items_should_return_correct_totalValue() {
-        Assertions.fail();
+        createAmelieCafe();
+        restaurant.addToMenu("Chicken wings", 299);
+
+        List<String> selectedItems = Arrays.asList("Chicken wings", "Sweet corn soup");
+
+        assertEquals(299 + 119, restaurant.getTotalOrderValue(selectedItems));
     }
 
     @Test
     public void get_order_total_value_when_given_list_of_product_isEmpty_should_return_zero() {
-        Assertions.fail();
+        createAmelieCafe();
+
+        List<String> selectedItems = Collections.emptyList();
+
+        assertEquals(0, restaurant.getTotalOrderValue(selectedItems));
     }
 
     //<<<<<<<<<<<<<<<<<<<<<<<Order Total>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
