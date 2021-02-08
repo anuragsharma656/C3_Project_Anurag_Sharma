@@ -65,7 +65,7 @@ class RestaurantServiceTest {
     }
 
     @AfterEach
-    public void teardown() {
+    public void clearRestaurantList() {
         service.getRestaurants().clear();
     }
 }
