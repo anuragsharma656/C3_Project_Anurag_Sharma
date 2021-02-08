@@ -1,8 +1,12 @@
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -58,6 +62,21 @@ class RestaurantTest {
                 () -> restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+    //<<<<<<<<<<<<<<<<<<<<<<<Order Total>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+    @Test
+    public void get_order_total_value_for_given_list_of_items_should_return_correct_totalValue() {
+        Assertions.fail();
+    }
+
+    @Test
+    public void get_order_total_value_when_given_list_of_product_isEmpty_should_return_zero() {
+        Assertions.fail();
+    }
+
+    //<<<<<<<<<<<<<<<<<<<<<<<Order Total>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
     private void createAmelieCafe() {
         LocalTime openingTime = LocalTime.parse("10:30:00");
